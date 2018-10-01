@@ -18,7 +18,7 @@ client.on('message', async (msg) => {
     await msg.reply(`Hello ${msg.author.username}`);
   } else if(command === 'lul') {
     const attachment = new Attachment('https://ubisafe.org/images/lul-transparent-twitch-1.png');
-    message.channel.send(attachment);
+    msg.channel.send(attachment);
   } else if(command === 'status') {
     const m = await msg.channel.send('Querying GitHub for pull request count during Hacktoberfest...');
     const username = args[0];
