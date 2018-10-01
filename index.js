@@ -1,4 +1,4 @@
-const { Client } = require('discord.js');
+const { Client, Attachment } = require('discord.js');
 const client = new Client();
 const prefix = 'hack!';
 
@@ -13,8 +13,12 @@ client.on('message', async (msg) => {
   if(command === 'ping'){
     const m = await msg.channel.send('Pinging...');
     m.edit(`Ponggers! Client ping: \`${m.createdTimestamp - msg.createdTimestamp}\`ms. Heartbeat ping: \`${client.ping}\`ms`);
+  } else if(command === 'hello') {
+    await msg.reply(`Hello ${sent.author.username}`);
+  } else if(command === 'lul') {
+    const attachment = new Attachment('https://ubisafe.org/images/lul-transparent-twitch-1.png');
+    message.channel.send(attachment);
   }
-  
 })
 
 client.login(process.env.TOKEN);
