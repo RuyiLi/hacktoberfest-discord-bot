@@ -14,7 +14,7 @@ client.on('message', async (msg) => {
     const m = await msg.channel.send('Pinging...');
     m.edit(`Ponggers! Client ping: \`${m.createdTimestamp - msg.createdTimestamp}\`ms. Heartbeat ping: \`${client.ping}\`ms`);
   } else if(command === 'hello') {
-    await msg.reply(`Hello ${sent.author.username}`);
+    await msg.reply(`Hello ${msg.author.username}`);
   } else if(command === 'lul') {
     const attachment = new Attachment('https://ubisafe.org/images/lul-transparent-twitch-1.png');
     message.channel.send(attachment);
