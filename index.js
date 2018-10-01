@@ -45,6 +45,8 @@ client.on('message', async (msg) => {
         }
       });
     });
+  } else if(command === 'scream') {
+    msg.reply(args.join(' ').toUpperCase());
   }
 })
 
