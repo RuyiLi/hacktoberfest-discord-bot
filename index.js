@@ -10,9 +10,12 @@ client.on('message', async (msg) => {
   const command = args.shift().slice(prefix.length);
   //Add your commands here. Good command handlers are overrated :POGGERS:
   
-  if(command === 'ping'){
+  if (command === 'ping'){
     const m = await msg.channel.send('Pinging...');
     m.edit(`Ponggers! Client ping: \`${m.createdTimestamp - msg.createdTimestamp}\`ms. Heartbeat ping: \`${client.ping}\`ms`);
+  } else if (command === 'say') {
+    if (!args.length) return msg.reply('Error: Missing required `content` argument for `say` command.');
+    msg.reply(args.join(' '));    
   }
   
 })
